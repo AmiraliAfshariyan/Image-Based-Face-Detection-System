@@ -47,7 +47,7 @@ The system pipeline inside face_recognizer.ipynb follows these sequential comput
 2.Face Masking/Bounding: Finds facial zones using HOG (Histogram of Oriented Gradients) via fr.face_locations().
 3.Feature Encoding: Computes facial embeddings:
 
-# Extracts structural facial landmarks into a 128-dimensional vector
+Extracts structural facial landmarks into a 128-dimensional vector
 sabt_sorat = fr.face_encodings(image)[0]
 
 Distance Comparison: Measures the Euclidean distance between vectors using fr.compare_faces(). If the distance is below the default threshold (0.6), it confirms a match.
