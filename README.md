@@ -40,6 +40,27 @@ The core dependency `dlib` requires CMake and a C++ compiler installed on your m
    cd your-repo-name
 
    Install the required libraries:Bashpip install opencv-python numpy face_recognition
-🚀 How It WorksThe system pipeline inside face_recognizer.ipynb follows these sequential computer vision steps:Image Loading: Reads input images using fr.load_image_file().Face Masking/Bounding: Finds facial zones using HOG (Histogram of Oriented Gradients) via fr.face_locations().Feature Encoding: Computes facial embeddings:Python# Extracts structural facial landmarks into a 128-dimensional vector
+🚀 How It Works
+The system pipeline inside face_recognizer.ipynb follows these sequential computer vision steps:
+
+1.Image Loading: Reads input images using fr.load_image_file().
+2.Face Masking/Bounding: Finds facial zones using HOG (Histogram of Oriented Gradients) via fr.face_locations().
+3.Feature Encoding: Computes facial embeddings:
+
+# Extracts structural facial landmarks into a 128-dimensional vector
 sabt_sorat = fr.face_encodings(image)[0]
-Distance Comparison: Measures the Euclidean distance between vectors using fr.compare_faces(). If the distance is below the default threshold (0.6), it confirms a match.📊 Evaluation WorkflowThe script demonstrates verification through two test instances:Test Case 1 (Different People): Compares Image A with Image B $\rightarrow$ Output: [False] (Successfully detects identity mismatch).Test Case 2 (Same Person): Compares Image A with Image C $\rightarrow$ Output: [True] (Successfully verifies identity under different lighting/angles).📝 Roadmap / Next Steps[ ] Implement Live Webcam Verification (Real-time Face Lock/Unlock).[ ] Add support for a SQLite/PostgreSQL database to manage and query multiple registered users.[ ] Build a lightweight web interface using Streamlit or Flask for user onboarding.Developed by Amirali Afshariyan
+
+Distance Comparison: Measures the Euclidean distance between vectors using fr.compare_faces(). If the distance is below the default threshold (0.6), it confirms a match.
+
+📊 Evaluation Workflow
+The script demonstrates verification through two test instances:
+
+o . Test Case 1 (Different People): Compares Image A with Image B $\rightarrow$ Output: [False] (Successfully detects identity mismatch).
+o . Test Case 2 (Same Person): Compares Image A with Image C $\rightarrow$ Output: [True] (Successfully verifies identity under different lighting/angles).
+
+📝 Roadmap / Next Steps
+o . [ ] Implement Live Webcam Verification (Real-time Face Lock/Unlock).[ ]
+o . Add support for a SQLite/PostgreSQL database to manage and query multiple registered users.
+o . [ ] Build a lightweight web interface using Streamlit or Flask for user onboarding.
+
+Developed by Amirali Afshariyan
